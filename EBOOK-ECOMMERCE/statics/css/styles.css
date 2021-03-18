@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* LINKS SIN DECORACION */
+.a:link, a:visited, a:active{
+  color: #fff;
+  text-decoration: none;
+}
+a:hover{
+  color: aliceblue;
+}
+
+/* FOOTER */
+.footer-black{
+  background-color: black;
+}
+
+/* ESTILOS DE FUENTES */
+.font-white{
+  color: white;
+}
