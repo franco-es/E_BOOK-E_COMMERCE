@@ -88,33 +88,50 @@
     <section class="container" style="margin-top: 30px">
       <section class="container">
         <form class="mb-3 mx-5">
+          <section class="form-row">
+            <section class="form-group col-md-6">
+              <label for="InputName">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="InputName"
+                placeholder="Nombre"
+              />
+            </section>
+            <section class="form-group col-md-6">
+              <label for="InputLastName">Apellido</label>
+              <input
+                type="text"
+                class="form-control"
+                id="InputLastName"
+                placeholder="Apellido"
+              />
+            </section>
+          </section>
           <section class="form-group">
-            <label for="exampleInputEmail1">Email</label>
+            <label for="InputEmail1">Email</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="InputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter email"
             />
-            <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
-            >
           </section>
           <section class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="InputPassword1"
               placeholder="Password"
             />
           </section>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary">Registrate</button>
 
           <p>
-            No tenes una cuenta?
-            <a class="btn btn-primary" href="registro.html">Registrate</a>
+            Ya tenes una cuenta?
+            <a class="btn btn-primary" href="login.html">Logueate</a>
           </p>
         </form>
       </section>
