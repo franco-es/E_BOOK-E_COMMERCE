@@ -4,7 +4,7 @@
 }
 
 /* ETIQUETAS SIN CLASE */
-.a:link, a:visited, a:active{
+a:link, a:visited, a:active{
   color: #fff;
   text-decoration: none;
 }
@@ -12,11 +12,16 @@ a:hover{
   color: aliceblue;
 }
 
-hr{
+.bb-100{
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid #3bb2af;
+  border-bottom: 1px solid #3bb2af;
+}
+
+b{
+  margin-left: .3rem;
+  margin-right: .3rem;
 }
 
 /* FOOTER */

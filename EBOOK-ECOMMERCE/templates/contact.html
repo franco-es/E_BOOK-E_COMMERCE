@@ -86,37 +86,87 @@
     </nav>
 
     <section class="container" style="margin-top: 30px">
-      <section class="row">
-        <h1>PAGINA DE CONTACTO</h1>
+      <section class="row justify-content-center">
+        <h1 class="iadpi-color">Contacto</h1>
+      </section>
+      <section class="row d-flex align-items-center bb-100">
+        <section class="col">
+          <h3 class="text-center">
+            Completá el formulario de contacto para que podamos contactanos:
+          </h3>
+        </section>
+        <hr />
+      </section>
+      <section class="container" style="margin-bottom: 10rem">
+        <form class="mb-3 mx-5">
+          <section class="form-group">
+            <label class="w-100 text-center" for="InputNameLastName"
+              >Nombre y apellido:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="InputNameLastName"
+              placeholder="Ingresá tu nombre y apellido"
+            />
+          </section>
+          <section class="form-group">
+            <label class="w-100 text-center" for="InputEmail"
+              >Correo electrónico:</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="InputEmail"
+              aria-describedby="emailHelp"
+              placeholder="Ingresá el email"
+            />
+          </section>
+          <section class="form-group">
+            <label class="w-100 text-center" for="InputMsjContacto"
+              >Mensaje:</label
+            >
+            <textarea
+              class="form-control"
+              name="message"
+              id="InputMsjContacto"
+              placeholder="Ingresá tu mensaje"
+              cols="20"
+              rows="5"
+            ></textarea>
+          </section>
+          <section class="row justify-content-center">
+            <button type="submit" class="btn iadpi-bg">Enviar</button>
+          </section>
+        </form>
       </section>
     </section>
     <!-- FOOTER -->
-    <section
-      class="jumbotron row footer-black font-white"
-      style="margin-bottom: 0"
-    >
-      <section class="col-4">
-        <a class="navbar-brand" href="#"
-          ><img
-            src="../statics/img/logo-iadpi-6-1.png"
-            class="d-inline-block align-top"
-        /></a>
-      </section>
-      <section class="col-4">
-        <h5>SOBRE NOSOTROS</h5>
-        <p>
-          Instituto Argentino de Derecho Procesal Informatico.<br />
-          Toda la informacion en un solo lugar! <br />
-          Conocimiento de abogados para abogados.
-        </p>
-      </section>
-      <section class="col-4 justify-content-center">
-        <h5>LEGALES</h5>
-        <p>
-          <a href="#">Anular Compra</a><br />
-          <a href="#">Politicas de privacidad</a><br />
-          <a href="#">Clausulas contractuales</a>
-        </p>
+    <section class="container-fluid mt-1" style="margin-bottom: 0">
+      <section class="row footer-black font-white">
+        <section class="col-sm">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="../statics/img/logo-iadpi-6-1.png"
+              class="d-inline-block align-top"
+          /></a>
+        </section>
+        <section class="col-sm">
+          <h5>SOBRE NOSOTROS</h5>
+          <p>
+            Instituto Argentino de Derecho Procesal Informatico.<br />
+            Toda la informacion en un solo lugar! <br />
+            Conocimiento de abogados para abogados.
+          </p>
+        </section>
+        <section class="col-sm justify-content-center">
+          <h5>LEGALES</h5>
+          <p>
+            <a href="#">Anular Compra</a><br />
+            <a href="#">Politicas de privacidad</a><br />
+            <a href="#">Clausulas contractuales</a>
+          </p>
+        </section>
       </section>
     </section>
     <script src="../statics/js/index.js"></script>
