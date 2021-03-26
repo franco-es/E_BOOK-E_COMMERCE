@@ -1,5 +1,5 @@
-{
-  "data":[
+
+[
    {
     "id":"1",
     "titulos":"lo que el viento se llevo",
@@ -9,7 +9,7 @@
   },
   {
     "id":"2",
-    "titulos":"lo que el viento se llevo",
+    "titulos":"lo que el viento se llevo 2",
     "precio": "1005",
     "descripcion":"descripcion sencilla",
     "img": "statics/img/book icon_3728063.png"
@@ -50,6 +50,6 @@
     "img": "statics/img/book icon_3728063.png"
   }
 ]
-}
+
 
 

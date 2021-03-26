@@ -81,39 +81,49 @@
               ><i class="fas fa-shopping-cart"></i
             ></a>
           </li>
+          
         </ul>
       </section>
     </nav>
 
-    <section class="container" id="cart" style="margin-top: 30px">
-      <h5>Tu carrito de compras</h5>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">titulo</th>
-            <th scope="col">precio</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="" alt="img" /></td>
-            <td>titulo</td>
-            <td>precio</td>
-            <td><a href=""></a><i class="fas fa-times-circle"></i></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="row d-flex">
-        <div class="col-8 text-right"><b> TOTAL</b></div>
-        <div class="col-4 text-center border border-dark">$precio total</div>
+    <section
+      class="container"
+      id="cart"
+      style="margin-top: 30px; min-height: 500px"
+    >
+      <h1 class="iadpi-color text-center">Tu carrito de compras</h1>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch" />
+        <label class="custom-control-label" for="customSwitch"
+          >Convertir a Dolares</label
+        >
       </div>
-      <section class="row">
-        <section class="col">
-          <a href="" class="align-item-center btn btn-primary">Comprar</a>
+      <p id="message" class="text-center mt-5"></p>
+
+      <div id="cartTable">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">titulo</th>
+              <th scope="col">precio</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="listCarrito"></tbody>
+        </table>
+        <div class="row d-flex">
+          <div class="col-8 text-right"><b> TOTAL</b></div>
+          <div class="col-4 text-center border border-dark" id="total"></div>
+        </div>
+        <section class="row">
+          <section class="col">
+            <a href="" class="align-item-center btn btn-info float-right my-4"
+              >Finalizar Compra</a
+            >
+          </section>
         </section>
-      </section>
+      </div>
     </section>
     <!-- footer -->
     <div class="footer-black p-4">
@@ -173,6 +183,7 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
-    <script src="statics/js/index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="statics/js/cart.js"></script>
   </body>
 </html>
