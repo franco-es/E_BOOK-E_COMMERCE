@@ -15,7 +15,8 @@ if (localStorage.getItem("cart")) {
     listCarrito.innerHTML += `<tr>
     <td><img src="${carrito[property].img}" alt="img" width="50px" /></td>
     <td>${carrito[property].titulo}</td>
-    <td name="precio" >$${carrito[property].precio}</td>
+    <td name="moneda" >$</td>
+    <td name="precio" >${carrito[property].precio}</td>
     <td><i style="cursor: pointer" class="fas fa-times-circle" id="deleteCart" data-id="${carrito[property].id}"></i></td>
     </tr>`;
     total += parseInt(carrito[property].precio);

@@ -19,7 +19,12 @@
     <title>ADPL</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light">
+    <!--nav top -->
+    <div class="bg-dark p-3"></div>
+    <!--end nav top -->
+
+    <!--nav general -->
+    <nav class="navbar navbar-expand-sm navbar-light container pr-4">
       <a class="navbar-brand" href="index.html"
         ><img
           src="statics/img/logo-iadpi-6-1.png"
@@ -71,20 +76,23 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contacto</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html"
-              ><i class="fas fa-user"></i
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html"
-              ><i class="fas fa-shopping-cart"></i
-            ></a>
-          </li>
-          
         </ul>
       </section>
+
+      <div class="float-right">
+        <input
+          onclick="changeMoneda()"
+          type="button"
+          class="btn-flotante"
+          value="USD"
+          id="moneda"
+        />
+        <a href="login.html"><i class="fas fa-user text-dark"></i></a>
+
+        <a href="cart.html"><i class="fas fa-shopping-cart text-dark"></i></a>
+      </div>
     </nav>
+    <!-- end nav general -->
 
     <section
       class="container"
@@ -106,6 +114,7 @@
             <tr>
               <th scope="col"></th>
               <th scope="col">titulo</th>
+              <th scope="col"></th>
               <th scope="col">precio</th>
               <th scope="col"></th>
             </tr>
@@ -167,7 +176,56 @@
     </div>
 
     <!-- end footer  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        const valueMoneda = document.getElementById("moneda").value;
+        convert(valueMoneda);
+        console.log("DOMloaded");
+      });
+      function convert(moneda) {
+        if (moneda == "USD") {
+          const url =
+            "https://v6.exchangerate-api.com/v6/18fb37c9560af72d1d1f8dc0/pair/ARS/USD";
+          fetch(url)
+            .then((response) => {
+              return response.json();
+            })
+            .then((res) => {
+              console.log(res.conversion_rate);
+              let dolar = res.conversion_rate;
+              localStorage.setItem("conversionMoneda", dolar);
+            });
+        }
+      }
+    </script>
+    <script>
+      async function changeMoneda() {
+        const valueMoneda = document.getElementById("moneda").value;
+        console.log(valueMoneda);
+        const precio = document.getElementsByName("precio");
+        let dolarLocarS = localStorage.getItem("conversionMoneda");
+        if (valueMoneda == "USD") {
+          for (var i = 0; i < precio.length; i++) {
+            let precioLibro = parseFloat(precio[i].textContent);
 
+            let precioFix = precioLibro * dolarLocarS;
+            precio[i].textContent = precioFix.toFixed(2);
+          }
+          document.getElementById("moneda").value = "ARS";
+        } else {
+          for (var i = 0; i < precio.length; i++) {
+            let precioLibro = parseFloat(precio[i].textContent);
+            let precioFix = precioLibro / dolarLocarS;
+            precio[i].textContent = precioFix.toFixed();
+          }
+          document.getElementById("moneda").value = "USD";
+        }
+        for (var i = 0; i < precio.length; i++) {
+          let precioLibro = precio[i].textContent;
+          console.log(precioLibro);
+        }
+      }
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"

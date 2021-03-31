@@ -241,7 +241,7 @@
             .then((res) => {
               console.log(res.conversion_rate);
               let dolar = res.conversion_rate;
-              // localStorage.setItem("conversionMoneda", dolar);
+              localStorage.setItem("conversionMoneda", dolar);
             });
         }
       }
@@ -251,11 +251,21 @@
         const valueMoneda = document.getElementById("moneda").value;
         console.log(valueMoneda);
         const precio = document.getElementsByName("precio");
+        let dolarLocarS = localStorage.getItem("conversionMoneda");
         if (valueMoneda == "USD") {
-          let dolarLocarS = localStorage.getItem("conversionMoneda");
-          console.log(dolarLocarS);
+          for (var i = 0; i < precio.length; i++) {
+            let precioLibro = parseFloat(precio[i].textContent);
+
+            let precioFix = precioLibro * dolarLocarS;
+            precio[i].textContent = precioFix.toFixed(2);
+          }
           document.getElementById("moneda").value = "ARS";
         } else {
+          for (var i = 0; i < precio.length; i++) {
+            let precioLibro = parseFloat(precio[i].textContent);
+            let precioFix = precioLibro / dolarLocarS;
+            precio[i].textContent = precioFix.toFixed();
+          }
           document.getElementById("moneda").value = "USD";
         }
         for (var i = 0; i < precio.length; i++) {
